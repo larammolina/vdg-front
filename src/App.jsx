@@ -1,25 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import NoPage from "./pages/NoPage";
+import Home from "./pages/Home";
+import Modelo from "./pages/Modelo";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <h1>Viernes de Garage</h1>
-      <h1>5 de Copas</h1>
-    </>
+    <div className="App">
+
+      <BrowserRouter>
+        
+        <Routes>
+          <Route exact path="/" element={<Home />}>
+
+          </Route>
+          <Route exact path="/modelo" element={<Modelo />} >
+            
+          </Route>
+          
+        </Routes>
+
+      </BrowserRouter>
+      <Footer/>
+      
+    </div>
+    
   )
 }
 
