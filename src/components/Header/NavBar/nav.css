@@ -4,4 +4,11 @@
     font-family: 'Quicksand', sans-serif;
     padding: 3px;
     text-align: center;
+    color: 	#f4af2d;
+}
+
+.link:active, .link:hover{
+    color: 	#f4af2d;
+    font-size: larger;
+    text-decoration: underline;
 }
