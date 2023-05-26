@@ -1,11 +1,10 @@
-
+import Titulo from "../components/Titulo/Titulo";
 
 const Home = () => {
     return (
         <>
-            <h1>Motorcito</h1>
-            <h1>Viernes de Garage</h1>
-            <h1>5 de Copas</h1>
+           <Titulo titulo="Bienvenidos" />
+           <Titulo titulo="Viernes de Garage" />
         </>
     )
     

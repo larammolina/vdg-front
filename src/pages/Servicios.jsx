@@ -1,9 +1,11 @@
+import Titulo from "../components/Titulo/Titulo";
 const Servicios = () => {
+    
     return (
-        <>
-            <h1>Servicios</h1>
+        
+    <Titulo titulo="Servicios" />
            
-        </>
+        
     )
     
   };

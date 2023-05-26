@@ -1,9 +1,11 @@
+import Titulo from "../components/Titulo/Titulo";
 const Modelo = () => {
-    return (
-        
-      
-        <h1>Modelo</h1>
     
+    return (
+              
+        <Titulo titulo="Pronóstico" />
+              
+       
     )
     
   };
