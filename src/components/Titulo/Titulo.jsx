@@ -1,8 +1,11 @@
+import './titulo.css'
+
+
 function Titulo ({titulo}) {
     
     return (
         
-        <h1>{titulo}</h1>
+        <h1 className='titulo'>{titulo}</h1>
     )
 }
 
