@@ -6,14 +6,18 @@ import { Sidebar } from '../components/Sidebar/Sidebar'
 
 const Layout = () => {
   return (
-    <div className='flex'>
+    <div className='flex h-screen overflow-hidden'>
 			<Sidebar/>
-      <main className="p-7">
-      <Header />
-        <Outlet />
-      </main>
+      <div className="flex flex-col p-7 min-w-full justify-between bg-black">
+				<Header />
 
-      {/* <Footer /> */}
+				<main>
+					<Outlet />
+				</main>
+
+				<Footer />
+      </div>
+
     </div>
   )
 }
