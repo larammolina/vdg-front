@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <div className='flex h-screen overflow-hidden'>
 			<Sidebar/>
-      <div className="flex flex-col p-7 min-w-full justify-between bg-black">
+      <div className="flex flex-col p-7 grow justify-between bg-black">
 				<Header />
 
 				<main>
