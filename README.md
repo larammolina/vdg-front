@@ -19,7 +19,7 @@ Instalación 🔧
      npm install
       
       
-4 - (instalar axios)En la carpeta donde se encuentra "package.json" ejecutar en la terminal:
+4 - Instalar vite: en la carpeta donde se encuentra "package.json" ejecutar en la terminal:
 
 
      npm init vite@latest
