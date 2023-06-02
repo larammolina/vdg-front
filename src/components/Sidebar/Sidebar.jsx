@@ -12,18 +12,18 @@ export const Sidebar = () => {
 		{index:2, title: "Pages", icon: <AiOutlineFileText/> },
 		{index:3, title: "Media", spacing: true, icon: <BsFillImageFill/>},
 		{index:4,
-			title: "Projects",
+			title: "Servicios",
 			icon: <BsReverseLayoutSidebarReverse/>,
 			submenu: true,
 			submenuItems:[
-				{index: "a", title:"Submenu 1"},
-				{index: "b", title:"Submenu 2"},
-				{index: "c", title:"Submenu 3"},
+				{index: "a", title:"Contratación Producto"},
+				{index: "b", title:"Contratación Cliente"},
+				{index: "c", title:"Evaluación Crediticia"},
 			]
 		},
 		{index:5, title: "Analytics", spacing: true, icon : <AiOutlineBarChart/>},
 		{index:6, title: "Forecasting", icon: <AiOutlineFundProjectionScreen/> },
-		{index:7, title: "Workflows", icon: <RiFlowChart/>},
+		{index:7, title: "Circuitos", icon: <RiFlowChart/>},
 	]
 	return (
 		<div className={`bg-dark-purple p-5 pt-8 ${ open ? "w-72" : "w-20"} relative duration-300`}>
