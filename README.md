@@ -31,8 +31,8 @@ Instalación 🔧
 
 Dependencias utilizadas 🔧
 
-  NPM
-  VITE
+    NPM
+    VITE
 
 
 
