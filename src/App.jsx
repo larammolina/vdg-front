@@ -5,35 +5,27 @@ import NoPage from "./pages/NoPage";
 import Home from "./pages/Home";
 import Servicios from "./pages/Servicios";
 import Modelo from "./pages/Modelo";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import Layout from "./containers/Layout";
 
 function App() {
   
   return (
-    <div className="App">
-
-      
       <BrowserRouter>
-        <Header/>
         <Routes>
-          <Route exact path="/" element={<Home />}>
 
-          </Route>
-          <Route exact path="/pronostico" element={<Modelo />} >
-            
-          </Route>
-          <Route exact path="/servicios" element={<Servicios />} >
-            
-          </Route>
-          
+					{/* ruta layout con header y footer */}
+					<Route element={<Layout />}> 
+
+						<Route exact path="/" element={<Home />}/>
+
+						<Route exact path="/pronostico" element={<Modelo />} />
+							
+						<Route exact path="/servicios" element={<Servicios />} />
+
+					</Route>
+
         </Routes>
-        <Footer/>
       </BrowserRouter>
-      
-      
-    </div>
-    
   )
 }
 
