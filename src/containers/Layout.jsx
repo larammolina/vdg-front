@@ -8,9 +8,8 @@ const Layout = () => {
   return (
     <div className='flex h-screen overflow-hidden'>
 			<Sidebar/>
-      <div className="flex flex-col p-7 grow justify-between bg-black">
-				<Header />
-
+      <div className="flex flex-col p-7 grow justify-between ">
+				
 				<main>
 					<Outlet />
 				</main>
