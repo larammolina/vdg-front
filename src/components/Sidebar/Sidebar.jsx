@@ -3,20 +3,21 @@ import { BsArrowLeftShort, BsSearch, BsChevronDown, BsFillImageFill, BsReverseLa
 import { AiFillEnvironment, AiOutlineBarChart, AiOutlineFileText, AiOutlineFundProjectionScreen, AiOutlineSetting } from "react-icons/ai"
 import { BiFootball } from "react-icons/bi";
 import { RiDashboardFill, RiFlowChart } from "react-icons/ri"
+import { Link } from "react-router-dom";
+import '../Header/NavBar/nav.css'
 
 export const Sidebar = () => {
 	const [open, setOpen ] =  useState(true);
 	const [submenuOpen, setSubmenuOpen ] =  useState(false);
 	const Menus = [
-		{index:1, title: "Dashboard"},
-		{index:2, title: "Pages", icon: <AiOutlineFileText/> },
-		{index:3, title: "Media", spacing: true, icon: <BsFillImageFill/>},
-		{index:4,
+		{index:1, path: '', title: "Disponibilidad", icon : <AiOutlineBarChart/>},
+		{index:2, path: 'pronostico', title: "Pronóstico", icon: <AiOutlineFundProjectionScreen/> },
+		{index:3,
+			path: 'servicios',
 			title: "Servicios",
 			icon: <BsReverseLayoutSidebarReverse/>,
 			submenu: true,
 			submenuItems:[
-				{index: "a", title:"Errores por Servicio"},
 				{index: "b", title:"Contratación Producto"},
 				{index: "c", title:"Contratación Cliente"},
 				{index: "d", title:"Evaluación Crediticia"},
@@ -26,6 +27,7 @@ export const Sidebar = () => {
 		{index:6, title: "Forecasting", icon: <AiOutlineFundProjectionScreen/> },
 		{index:7, title: "Circuitos", icon: <RiFlowChart/>},
 		
+		{index:4, path: '', title: "Circuitos", icon: <RiFlowChart/>}
 	]
 	return (
 		<div className={`bg-dark-purple p-5 pt-8 ${ open ? "w-72" : "w-20"} relative duration-300`}>
@@ -50,9 +52,10 @@ export const Sidebar = () => {
 								{menu.icon ? menu.icon :  <RiDashboardFill/>}
 							</span>
 							<span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>
-								{menu.title}
+								<Link to={'/' + menu.path } className='link'>{menu.title}</Link>
 							</span>
 							{menu.submenu && open &&( <BsChevronDown className={`duration-500 ${submenuOpen && "rotate-[90deg]"}`} onClick={() => setSubmenuOpen(!submenuOpen) }/>)}
+							<Link to={'/' + menu.submenu } className='link'>{menu.submenu && open &&(<BsChevronDown className={`duration-500 ${submenuOpen && "rotate-[90deg]"}`} onClick={() => setSubmenuOpen(!submenuOpen) }/>)}</Link>
 							
 						</li>
 								{menu.submenu && submenuOpen && open && (
