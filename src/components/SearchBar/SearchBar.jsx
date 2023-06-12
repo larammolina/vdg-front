@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
 import Result from '../Result/Result';
+import ServiceOptions from '../ServiceOptions/ServiceOptions';
+import ErrorOptions from '../ErrorOptions/ErrorOptions';
 import './searchbar.css'
 
 
 const SearchBar = () => {
     const [value, setValue] = useState(''); // Here we'll store the value of the search bar's text input
-    
+    const [service, setService] = useState('');
+    const [errorType, setErrorType] = useState('');
   
   
     return (
       <>
         <div className="">
-          <label>Búsqueda</label>  
+           
           <input
             type="text"
             className=""
@@ -21,10 +24,12 @@ const SearchBar = () => {
               setValue(e.target.value);
             }}
           />
-            <ul>
-                
-            </ul>
-           <Result />
+          
+          <input name="fecha" type='date' min="2020-01-01" />
+          <ServiceOptions handleService={service => setService(service)}/>
+          <ErrorOptions ErrorOptions={errorType => setErrorType(errorType)}/>
+
+          <Result />
         </div>
        
       </>
