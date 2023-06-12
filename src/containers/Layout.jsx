@@ -11,8 +11,7 @@ const Layout = () => {
 			<Sidebar/>
       <div className="flex flex-col p-7 grow justify-between ">
 				
-        <Header />
-				<main>
+        <main>
 					<Outlet />
           
 				</main>

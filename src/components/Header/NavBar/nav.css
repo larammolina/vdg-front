@@ -1,14 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Quicksand:wght@300&display=swap');
 
 .link {
-    font-family: 'Quicksand', sans-serif;
-    padding: 3px;
     text-align: center;
     color: 	#fffffe;
 }
 
 .link:active, .link:hover{
     color: 	#fffffe;
-    font-size: larger;
     text-decoration: underline;
 }

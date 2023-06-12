@@ -4,9 +4,9 @@ import './nav.css'
 const NavBar = () => {
     return (
         <nav>
-            <Link to='/' className='link' >Inicio</Link>
-            <Link to='/pronostico' className='link' >Pronóstico</Link>
-            <Link to='/servicios' className='link' >Servicios</Link>
+            <Link to='/' className='link' ></Link>
+            <Link to='/pronostico' className='link' ></Link>
+            <Link to='/servicios' className='link' ></Link>
             
         </nav>
     )

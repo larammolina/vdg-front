@@ -45,7 +45,7 @@ export const Sidebar = () => {
 						<div  key={index}>
 						<li  className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 rounded-md mt-2 hover:bg-light-white ${menu.spacing ? "mt-9" : "mt-2"}`}>
 							<span className="text-2xl block float-left">
-								{menu.icon ? menu.icon :  <RiDashboardFill/>}
+							<Link to={'/' + menu.path } className="link" >{menu.icon ? menu.icon :  <RiDashboardFill/>}</Link>
 							</span>
 							<span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>
 								<Link to={'/' + menu.path } className='link'>{menu.title}</Link>
