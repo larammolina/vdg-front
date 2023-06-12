@@ -2,10 +2,10 @@ const ErrorOptions = (props) => {
     return (
 
       <>
-        <label htmlFor='servicios'></label>
-        <select placeholder='Servicio' name="Servicios" onChange={(e)=> props.handFilter(e.target.value)}>
+        <label htmlFor='errores'></label>
+        <select placeholder='errores' name="tipoDeErrores" onChange={(e)=> props.handleFilter(e.target.value)}>
           <option key={1} value="Errores">Errores Tecnicos</option>
-          <option key={2} value="ErroresFuncionales" >Errores Funcionales</option>
+          <option key={2} value="Errores Funcionales" >Errores Funcionales</option>
           <option key={3} value="Avisos">Avisos</option>
     
         </select>

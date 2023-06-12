@@ -1,0 +1,28 @@
+
+
+.filtros{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: baseline;
+  
+}
+
+
+
+.searchBar {
+  border: grey solid 2px;
+  min-width: 600px;
+  max-width: 900px;
+  height: 45px;
+  margin: 50px auto;
+  padding: 15px;
+  border-radius:25px;
+}
+
+.item {
+  padding: 10px;
+  border-radius:25px;
+  border: blue solid;
+}
+
