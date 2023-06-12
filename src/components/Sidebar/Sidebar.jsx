@@ -18,15 +18,11 @@ export const Sidebar = () => {
 			icon: <BsReverseLayoutSidebarReverse/>,
 			submenu: true,
 			submenuItems:[
-				{index: "b", title:"Contratación Producto"},
-				{index: "c", title:"Contratación Cliente"},
-				{index: "d", title:"Evaluación Crediticia"},
+				{index: "a", path: '', title:"Contratación Producto"},
+				{index: "b", path: '', title:"Contratación Cliente"},
+				{index: "c", path: '', title:"Evaluación Crediticia"},
 			]
 		},
-		{index:5, title: "Analytics", spacing: true, icon : <AiOutlineBarChart/>},
-		{index:6, title: "Forecasting", icon: <AiOutlineFundProjectionScreen/> },
-		{index:7, title: "Circuitos", icon: <RiFlowChart/>},
-		
 		{index:4, path: '', title: "Circuitos", icon: <RiFlowChart/>}
 	]
 	return (
@@ -54,7 +50,6 @@ export const Sidebar = () => {
 							<span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>
 								<Link to={'/' + menu.path } className='link'>{menu.title}</Link>
 							</span>
-							{menu.submenu && open &&( <BsChevronDown className={`duration-500 ${submenuOpen && "rotate-[90deg]"}`} onClick={() => setSubmenuOpen(!submenuOpen) }/>)}
 							<Link to={'/' + menu.submenu } className='link'>{menu.submenu && open &&(<BsChevronDown className={`duration-500 ${submenuOpen && "rotate-[90deg]"}`} onClick={() => setSubmenuOpen(!submenuOpen) }/>)}</Link>
 							
 						</li>
