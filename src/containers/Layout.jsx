@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom'
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import { Sidebar } from '../components/Sidebar/Sidebar'
+import Header from '../components/Header/Header'
+import ErroresPorServicio from '../pages/ErroresPorServicio'
 
 
 const Layout = () => {
@@ -12,8 +13,9 @@ const Layout = () => {
 				
 				<main className='grow'>
 					<Outlet />
+          
 				</main>
-
+        
 				<Footer />
       </div>
 
@@ -21,4 +23,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default Layout;

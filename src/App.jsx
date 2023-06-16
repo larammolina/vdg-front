@@ -8,6 +8,7 @@ import Servicio from "./pages/Servicio";
 import Modelo from "./pages/Modelo";
 import Layout from "./containers/Layout";
 import Circuitos from "./pages/Circuitos";
+import ErroresPorServicio from "./pages/ErroresPorServicio";
 
 function App() {
   
