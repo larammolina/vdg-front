@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Servicios from "./pages/Servicios";
 import Modelo from "./pages/Modelo";
 import Layout from "./containers/Layout";
+import ErroresPorServicio from "./pages/ErroresPorServicio";
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
 							
 						<Route exact path="/servicios" element={<Servicios />} />
 
+            
 					</Route>
 
         </Routes>
