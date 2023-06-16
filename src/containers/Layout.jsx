@@ -10,7 +10,7 @@ const Layout = () => {
 			<Sidebar/>
       <div className="flex flex-col p-7 grow justify-between ">
 				
-				<main>
+				<main className='grow'>
 					<Outlet />
 				</main>
 

@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { BsArrowLeftShort, BsSearch, BsChevronDown, BsFillImageFill, BsReverseLayoutSidebarReverse } from "react-icons/bs"
-import { AiFillEnvironment, AiOutlineBarChart, AiOutlineFileText, AiOutlineFundProjectionScreen, AiOutlineSetting } from "react-icons/ai"
+import { BsArrowLeftShort, BsSearch, BsChevronDown, BsReverseLayoutSidebarReverse } from "react-icons/bs"
+import { AiFillEnvironment, AiOutlineBarChart, AiOutlineFundProjectionScreen } from "react-icons/ai"
 import { BiFootball } from "react-icons/bi";
 import { RiDashboardFill, RiFlowChart } from "react-icons/ri"
 import { Link } from "react-router-dom";
@@ -18,13 +18,14 @@ export const Sidebar = () => {
 			icon: <BsReverseLayoutSidebarReverse/>,
 			submenu: true,
 			submenuItems:[
-				{index: "a", path: '', title:"Contratación Producto"},
-				{index: "b", path: '', title:"Contratación Cliente"},
-				{index: "c", path: '', title:"Evaluación Crediticia"},
+				{index: "a", path: 'contratacion-prod', title:"Contratación Producto"},
+				{index: "b", path: 'contratacion-cli', title:"Contratación Cliente"},
+				{index: "c", path: 'evaluacion', title:"Evaluación Crediticia"},
 			]
 		},
-		{index:4, path: '', title: "Circuitos", icon: <RiFlowChart/>}
+		{index:4, path: 'circuitos', title: "Circuitos", icon: <RiFlowChart/>}
 	]
+	
 	return (
 		<div className={`bg-dark-purple p-5 pt-8 ${ open ? "w-72" : "w-20"} relative duration-300`}>
 			<BsArrowLeftShort className={`bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border-2 border-dark-purple ${!open && "rotate-180"}`} onClick={() => setOpen(!open) }/>
@@ -34,10 +35,10 @@ export const Sidebar = () => {
 				<h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "scale-0"}`}>Motorcito</h1>
 			</div>
 
-			<div className={`flex items-center rounded-md bg-light-white mt-6 ${!open? "px-2.5": "px-4" } py-2`}>
+			{/* <div className={`flex items-center rounded-md bg-light-white mt-6 ${!open? "px-2.5": "px-4" } py-2`}>
 				<BsSearch className={`text-white text-lg block float-left cursor-pointer ${ open && "mr-2" }`}/>
 				<input type="search" placeholder="Buscar" className={`text-base bg-transparent w-full text-white placeholder-white focus:outline-none ${!open && "hidden"}`}/>
-			</div>
+			</div> */}
 
 			<ul className="pt-2">
 				{
@@ -50,7 +51,7 @@ export const Sidebar = () => {
 							<span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>
 								<Link to={'/' + menu.path } className='link'>{menu.title}</Link>
 							</span>
-							<Link to={'/' + menu.submenu } className='link'>{menu.submenu && open &&(<BsChevronDown className={`duration-500 ${submenuOpen && "rotate-[90deg]"}`} onClick={() => setSubmenuOpen(!submenuOpen) }/>)}</Link>
+							{menu.submenu && open &&(<BsChevronDown className={`duration-500 ${submenuOpen && "rotate-[90deg]"}`} onClick={() => setSubmenuOpen(!submenuOpen) }/>)}
 							
 						</li>
 								{menu.submenu && submenuOpen && open && (
@@ -58,7 +59,7 @@ export const Sidebar = () => {
 										{
 											menu.submenuItems.map((submenuItem, subindex) =>(
 												<li key={subindex} className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5 rounded-md  hover:bg-light-white`}>
-													{submenuItem.title}
+													<Link to={'/servicios/' + submenuItem.path } className='link'>{submenuItem.title}</Link>
 												</li>
 											))
 										}
