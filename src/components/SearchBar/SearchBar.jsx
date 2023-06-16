@@ -26,9 +26,9 @@ const SearchBar = () => {
             }}
           />
           <div className='filtros'>
-            <input className="item" name="fecha" type='date' min="2020-01-01" />
             <ServiceOptions className="item" handleService={service => setService(service)}/>
             <ErrorOptions  className="item" handleFilter={errorType => setErrorType(errorType)}/>
+            <input className="item" name="fecha" type='date' min="2020-01-01" />
           </div>
           
           <Filtros tipoDeErrores={errorType} servicio={service} />

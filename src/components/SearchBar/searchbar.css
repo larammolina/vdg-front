@@ -8,8 +8,6 @@
   
 }
 
-
-
 .searchBar {
   border: grey solid 2px;
   min-width: 600px;
@@ -23,6 +21,6 @@
 .item {
   padding: 10px;
   border-radius:25px;
-  border: blue solid;
+  border: grey solid 1px;
 }
 
