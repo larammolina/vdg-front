@@ -1,0 +1,65 @@
+{
+    "monitorHabilitado": "true",
+    "fechaInicioAplicacion": "15/06/2023 00:00:58",
+    "fechaInicioServicios": "15/06/2023 00:00:58",
+    "elementos": [
+      {
+        "elemento": "SEGU",
+        "descripcion": "Seguros ",
+        "cantidadEjecuciones": 1.0,
+        "fechaUltimaEjecucion": "15/06/2023 23:18:42",
+        "cantidadEjecucionesErroneas": 0.0,
+        "fechaUltimaEjecucionErronea": "",
+        "cantidadEjecucionesAvisos": 0.0,
+        "fechaUltimaEjecucionAviso": "",
+        "porcentajeExito": 100.0,
+        "porcentajeError": 0.0,
+        "porcentajeAviso": 0.0,
+        "tipo": "TRX",
+        "errores": [
+          {
+            "codigoError": "VE400",
+            "descripcionError": "Codigo Error: VE400.Detalle Error: La verificaciÃ³n no estÃ¡ abierta",
+            "detalleError": "La verificaciÃ³n no estÃ¡ abierta",
+            "cantidadOcurrencia": 98,
+            "fechaUltimaOcurrencia": "01/06/2023 23:16:53"
+          }
+        ],
+        "erroresFuncionalesAux": [
+          {
+            "date": "01/06/2023 23:30:55",
+            "response": [
+              "CLE0405 -  EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\u0000"
+            ],
+            "cantidadOcurrencia": 77,
+            "fechaUltimaOcurrencia": "01/06/2023 23:46:44"
+          }
+        ],
+        "erroresFuncionales": [
+          {
+            "date": "01/06/2023 20:30:55",
+            "request": "",
+            "response": [
+              "CLE0405 -  EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\u0000"
+            ]
+          },
+          {
+            "date": "01/06/2023 21:30:55",
+            "request": "",
+            "response": [
+              "CLE0405 -  EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\u0000"
+            ]
+          }
+        ],
+        "campaigns": [],
+        "ejecucionesExitosas": {
+          "fechaUltimaEjecucionExitosa": "15/06/2023 22:18:42",
+          "cantidadEjecucionesExitosas": 1.0,
+          "cantidadAprobados": 0.0,
+          "cantidadRechazados": 0.0,
+          "porcentajeAprobado": 0.0,
+          "porcentajeRechazado": 0.0
+        }
+      }
+    ]
+  }
