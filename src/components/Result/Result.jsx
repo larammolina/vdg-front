@@ -2,7 +2,7 @@ import './result.css'
 
 const Result = (props) => (
     <>
-    <ul className="grid">
+    <ul className="grid_">
       <li>{props.fecha}</li>
       <li>{props.servicio}</li>
       <li>{props.tipoDeError}</li>
