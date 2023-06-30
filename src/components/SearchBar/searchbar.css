@@ -1,6 +1,6 @@
 
 
-.filtros{
+.filtros_{
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -8,7 +8,7 @@
   
 }
 
-.searchBar {
+.searchBar_ {
   border: grey solid 2px;
   min-width: 600px;
   max-width: 900px;
@@ -18,7 +18,7 @@
   border-radius:25px;
 }
 
-.item {
+.item_ {
   padding: 10px;
   border-radius:25px;
   border: grey solid 1px;

@@ -25,17 +25,17 @@ const SearchBar = () => {
            
           <input
             type="text"
-            className="searchBar"
+            className="searchBar_"
             placeholder="Buscar errores..."
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
             }}
           />
-          <div className='filtros'>
-            <ServiceOptions className="item" handleService={service => setService(service)}/>
-            <ErrorOptions  className="item" handleFilter={errorType => setErrorType(errorType)}/>
-            <input className="item" name="fecha" type='date' min="2020-01-01" />
+          <div className='filtros_'>
+            <ServiceOptions className="item_" handleService={service => setService(service)}/>
+            <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
+            <input className="item_" name="fecha" type='date' min="2020-01-01" />
           </div>
           <FileUpload />
           <Filtros tipoDeErrores={errorType} servicio={service} />
