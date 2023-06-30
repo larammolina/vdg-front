@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './fileupload.css'
 
 const FileUpload = () => {
 
@@ -17,12 +18,9 @@ const FileUpload = () => {
     return (
 
         <>
-        <input
-        type="file"
-        id="docpicker"
-        accept=".doc,.docx,.xml,.json,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" 
-        multiple="multiple" 
-        onChange={handleChange}
+        <input  type="file" id="docpicker" className="examinar_"
+            accept=".doc,.docx,.xml,.json,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" 
+            multiple="multiple" onChange={handleChange}
         />
         <br />
         <pre>

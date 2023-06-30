@@ -37,12 +37,13 @@ const SearchBar = () => {
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
             <input className="item_" name="fecha" type='date' min="2020-01-01" />
           </div>
-          <FileUpload />
+          
           <Filtros tipoDeErrores={errorType} servicio={service} />
         </div>
         <div>
           <Result tipoDeError={errorType} servicio={service} fecha={date} descripcionError={descripcionError} detalleError={detalleError} cantidadError={ocurrencia}/>
         </div>
+        <FileUpload />
        
       </>
     );
