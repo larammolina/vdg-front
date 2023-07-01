@@ -2,6 +2,9 @@ import './result.css'
 
 const Result = (props) => (
     <>
+    <div>
+        Exportar a Excel
+    </div>
     <ul className="grid_">
       <li>{props.fecha}</li>
       <li>{props.servicio}</li>
@@ -10,9 +13,7 @@ const Result = (props) => (
       <li>{props.detalleError}</li>
       <li>{props.cantidadError}</li>
     </ul>
-    <div>
-        exportar a Excel
-    </div>
+    
     </>
   );
   

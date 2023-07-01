@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './fileupload.css'
 
-const FileUpload = () => {
+const FileUpload = (props) => {
 
 
     const [files, setFiles] = useState("");
@@ -24,7 +24,10 @@ const FileUpload = () => {
         />
         <br />
         <pre>
-            {files && (files.elementos.map((item)=> <h1>{item.elemento}</h1>))  }
+            {files && (files.elementos.map((item)=> <div>{item.elemento}</div>))  }
+            {files && (files.elementos.map((item)=> <div> {item.descripcion}</div> ))  }
+            {files && (files.elementos.map((item)=> <div> {item.errores[0].codigoError}</div> ))  }
+            {files && (files.elementos.map((item)=> <div> {item.erroresFuncionales[0].response}</div> ))  }
         </pre>
         
         </>
