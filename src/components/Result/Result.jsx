@@ -2,9 +2,7 @@ import './result.css'
 
 const Result = (props) => (
     <>
-    <div>
-        Exportar a Excel
-    </div>
+    
     <ul className="grid_">
       <li>{props.fecha}</li>
       <li>{props.servicio}</li>
