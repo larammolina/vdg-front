@@ -38,3 +38,10 @@ Dependencias utilizadas 🔧
 ---------------------------------------------------------------------------------------------------------------------------
 
 Funcionalidades 🔧
+
+1- Buscar Errores, Avisos, Errores Funcionales de los servicios por fecha. Exportar el resultado a excel.
+
+2 - Subir tu propio archivo JSon y mapear los Errores, Avisos, Errores Funcionales de los servicios de todo el documento. Exportar el resultado a excel.
+      
+4 - Conocer la disponibilidad de un servicio determinado en forma de grafico. Casos de éxito versus fallas.
+       
