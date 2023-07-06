@@ -23,29 +23,22 @@ const FileUpload = () => {
             multiple="multiple" onChange={handleChange}
         />
         <br />
-        {/* <pre>
-            {files && (files.elementos.map((item)=> <div> {item.elemento} </div>))  }
-            {files && (files.elementos.map((item)=> <div> {item.descripcion} </div> ))  }
-            {files && (files.elementos.map((item)=> <div> {item.errores[0].codigoError}</div> ))  }
-            {files && (files.elementos.map((item)=> <div> {item.erroresFuncionales[0].response}</div> ))  }
-            </pre> */}
-
-    
+        <h4>Exportar a Excel</h4>
+        <br />
+        <div className="gridParserJson">
+            {files && (files.elementos.map(outerElement => {
+                return outerElement.errores.map(innerElement => (
+                <ul key={outerElement.elemento}>
+                    <li> Servicio: {outerElement.elemento}</li> 
+                    <li> Error: {innerElement.codigoError} </li> 
+                    <li> Ocurrencia: {innerElement.cantidadOcurrencia} </li>
+                    <li> Detalle: {innerElement.detalleError} </li>
+                    <li> Fecha: {innerElement.fechaUltimaOcurrencia} </li>
+                </ul>
+                ))
+            }))}
+        </div>
         
-
-        <pre>
-            <h4>Exportar a Excel</h4>
-            <br />
-            <ul>
-                {files && (files.elementos.map(outerElement => {
-                    return outerElement.errores.map(innerElement => (
-                    <li key={outerElement.elemento}>
-                        Servicio: {outerElement.elemento} - Error: {innerElement.codigoError} -  Ocurrencia: {innerElement.cantidadOcurrencia} - Detalle: {innerElement.detalleError} 
-                    </li>
-                    ))
-                }))}
-            </ul>
-        </pre>
 
         
         </>

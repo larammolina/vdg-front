@@ -41,7 +41,7 @@ const SearchBar = () => {
         <div>
           <Result tipoDeError={errorType} servicio={service} fecha={date} descripcionError={descripcionError} detalleError={detalleError} cantidadError={ocurrencia}/>
         </div>
-        <FileUpload />
+        
        
       </>
     );
