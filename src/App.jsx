@@ -7,7 +7,7 @@ import Servicios from "./pages/Servicios";
 import Servicio from "./pages/Servicio";
 import Modelo from "./pages/Modelo";
 import Layout from "./containers/Layout";
-import Circuitos from "./pages/Circuitos";
+import MapearErrores from "./pages/MapearErrores";
 import ErroresPorServicio from "./pages/ErroresPorServicio";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
 
 						<Route exact path="/servicios/:servicioId" element={<Servicio />} />
 
-						<Route exact path="/circuitos" element={<Circuitos />} />
+						<Route exact path="/mapearErrores" element={<MapearErrores />} />
 
 					</Route>
 
