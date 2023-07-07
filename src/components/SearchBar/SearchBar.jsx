@@ -75,11 +75,10 @@ const SearchBar = () => {
             placeholder="Buscar por término"
             value={searchTerm}
             onChange={handleSearchTerm}
-          />
+          /> <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
           <div className='filtros_'>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
-            <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
             <input className="item_" name="fecha" type='date' min="2020-01-01" />
           </div>
         </div>
@@ -90,17 +89,19 @@ const SearchBar = () => {
                 <li key={index}>
                   {errorType === 'errores' ? (
                     <>
+                      <p>------------------</p>
                       <p>Código de error: {item.codigoError}</p>
                       <p>Descripción de error: {item.descripcionError}</p>
-                      <p>Detalle de error: {item.detalleError}</p>
-                      <p>Cantidad de ocurrencias: {item.cantidadOcurrencia}</p>
+                      <p>{item.detalleError}</p>
+                      <p>Ocurrencias: {item.cantidadOcurrencia}</p>
                       <p>Fecha última ocurrencia: {item.fechaUltimaOcurrencia}</p>
                     </>
                   ) : (
                     <>
+                      <p>------------------</p>
                       <h4>{item.date}</h4>
-                      <p>Request: {item.request}</p>
-                      <p>Response: {item.response ? item.response.join(', ') : ''}</p>
+                      <p>{item.request}</p>
+                      <p>{item.response ? item.response.join(', ') : ''}</p>
                     </>
                   )}
                 </li>
