@@ -32,3 +32,10 @@
   width: 100px;
   margin-left: 15px;
 }
+
+.botonExportar_ {
+  background-color: lightblue;
+  border-radius:25px;
+  width: auto;
+  margin-left: 15px;
+}
