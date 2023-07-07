@@ -99,10 +99,11 @@ const SearchBar = () => {
             onChange={handleSearchTerm}
           /> <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
           <div className='filtros_'>
+            <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
             <input className="item_" name="fecha" type='date' min="2020-01-01" />
-            <button className='botonBuscar_' onClick={handleExportToExcel}>Exportar a Excel</button>
+            
           </div>
         </div>
         <div>
