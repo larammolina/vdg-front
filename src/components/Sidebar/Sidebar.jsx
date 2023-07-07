@@ -10,7 +10,7 @@ export const Sidebar = () => {
 	const [open, setOpen ] =  useState(true);
 	const [submenuOpen, setSubmenuOpen ] =  useState(false);
 	const Menus = [
-		{index:1, path: '', title: "Buscar Errores", icon : <AiOutlineBarChart/>},
+		{index:1, path: '', title: "Buscador", icon : <AiOutlineBarChart/>},
 		{index:2, path: 'pronostico', title: "Pronóstico", icon: <AiOutlineFundProjectionScreen/> },
 		{index:3,
 			path: 'servicios',
@@ -23,7 +23,7 @@ export const Sidebar = () => {
 				{index: "c", path: 'evaluacion', title:"Evaluación Crediticia"},
 			]
 		},
-		{index:4, path: 'MapearErrores', title: "Mapear Errores desde Archivo", icon: <BsReverseLayoutSidebarReverse/>}
+		{index:4, path: 'MapearErrores', title: "Análisis", icon: <BsReverseLayoutSidebarReverse/>}
 	]
 	
 	return (
