@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ServiceOptions from '../ServiceOptions/ServiceOptions';
 import ErrorOptions from '../ErrorOptions/ErrorOptions';
 import './searchbar.css'
-
+import XLSX from 'xlsx/dist/xlsx.full.min.js';
 import data from './../../data/Monitor/OM-2023-06-15T-235800.json';
 
 const SearchBar = () => {
@@ -17,8 +17,6 @@ const SearchBar = () => {
     
     
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchDescription, setSearchDescription] = useState('');
-  const [searchFilter, setSearchFilter] = useState('all');
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearchTerm = (e) => {
@@ -63,6 +61,30 @@ const SearchBar = () => {
 
     setSearchResults(searchResults);
   };
+
+  const handleExportToExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(searchResults);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, `_${service}`);
+
+    let fileName = 'data';
+
+    if (service) {
+      fileName += `_${service}`;
+    }
+
+    if (errorType === 'errores') {
+      fileName += '_errores';
+    } else if (errorType === 'erroresFuncionales') {
+      fileName += '_erroresFuncionales';
+    } else if (errorType === 'erroresFuncionalesAux') {
+      fileName += '_erroresFuncionalesAux';
+    }
+
+    fileName += '.xlsx';
+
+    XLSX.writeFile(workbook, fileName);
+  };
     
   
     return (
@@ -80,6 +102,7 @@ const SearchBar = () => {
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
             <input className="item_" name="fecha" type='date' min="2020-01-01" />
+            <button className='botonBuscar_' onClick={handleExportToExcel}>Exportar a Excel</button>
           </div>
         </div>
         <div>
