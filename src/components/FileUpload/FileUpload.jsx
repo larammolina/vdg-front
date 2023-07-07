@@ -29,8 +29,8 @@ const FileUpload = () => {
       
         const worksheet = XLSX.utils.json_to_sheet(errorItems);
         const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, 'Resultados');
-        XLSX.writeFile(workbook, 'resultados_busqueda.xlsx');
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Errores por Servicio');
+        XLSX.writeFile(workbook, 'resultados_mapeos.xlsx');
     };
 
 
