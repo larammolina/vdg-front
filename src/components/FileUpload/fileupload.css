@@ -1,7 +1,10 @@
-.examinar_ {
+.examinar_{
     margin: 20px;
     padding: 5px;
+    border-radius:25px;
+    margin-left: 15px;
 }
+
 
 .gridParserJson {
     display: grid;

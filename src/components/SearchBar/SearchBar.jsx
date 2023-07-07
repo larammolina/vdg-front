@@ -91,6 +91,8 @@ const SearchBar = () => {
     return (
       
       <div className="overflow-scroll">
+        <br />
+        
         <div>
            
           {/* <input
@@ -104,7 +106,7 @@ const SearchBar = () => {
             <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
-            <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
+            <button className='botonBuscar_ bg-dark-purple'  onClick={handleSearch}>Buscar</button>
             {/* <input className="item_" name="fecha" type='date' min="2020-01-01" /> */}
             
           </div>
