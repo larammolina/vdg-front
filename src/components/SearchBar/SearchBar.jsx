@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ServiceOptions from '../ServiceOptions/ServiceOptions';
 import ErrorOptions from '../ErrorOptions/ErrorOptions';
 import './searchbar.css'
-
+import XLSX from 'xlsx/dist/xlsx.full.min.js';
 import data from './../../data/Monitor/OM-2023-06-15T-235800.json';
 
 const SearchBar = () => {
@@ -17,8 +17,6 @@ const SearchBar = () => {
     
     
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchDescription, setSearchDescription] = useState('');
-  const [searchFilter, setSearchFilter] = useState('all');
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearchTerm = (e) => {
@@ -63,6 +61,30 @@ const SearchBar = () => {
 
     setSearchResults(searchResults);
   };
+
+  const handleExportToExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(searchResults);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, `_${service}`);
+
+    let fileName = 'data';
+
+    if (service) {
+      fileName += `_${service}`;
+    }
+
+    if (errorType === 'errores') {
+      fileName += '_errores';
+    } else if (errorType === 'erroresFuncionales') {
+      fileName += '_erroresFuncionales';
+    } else if (errorType === 'erroresFuncionalesAux') {
+      fileName += '_erroresFuncionalesAux';
+    }
+
+    fileName += '.xlsx';
+
+    XLSX.writeFile(workbook, fileName);
+  };
     
   
     return (
@@ -75,12 +97,13 @@ const SearchBar = () => {
             placeholder="Buscar por término"
             value={searchTerm}
             onChange={handleSearchTerm}
-          />
+          /> <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
           <div className='filtros_'>
+            <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
-            <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
             <input className="item_" name="fecha" type='date' min="2020-01-01" />
+            
           </div>
         </div>
         <div>
@@ -90,17 +113,19 @@ const SearchBar = () => {
                 <li key={index}>
                   {errorType === 'errores' ? (
                     <>
+                      <p>------------------</p>
                       <p>Código de error: {item.codigoError}</p>
                       <p>Descripción de error: {item.descripcionError}</p>
-                      <p>Detalle de error: {item.detalleError}</p>
-                      <p>Cantidad de ocurrencias: {item.cantidadOcurrencia}</p>
+                      <p>{item.detalleError}</p>
+                      <p>Ocurrencias: {item.cantidadOcurrencia}</p>
                       <p>Fecha última ocurrencia: {item.fechaUltimaOcurrencia}</p>
                     </>
                   ) : (
                     <>
+                      <p>------------------</p>
                       <h4>{item.date}</h4>
-                      <p>Request: {item.request}</p>
-                      <p>Response: {item.response ? item.response.join(', ') : ''}</p>
+                      <p>{item.request}</p>
+                      <p>{item.response ? item.response.join(', ') : ''}</p>
                     </>
                   )}
                 </li>

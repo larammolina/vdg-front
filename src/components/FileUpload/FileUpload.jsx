@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './fileupload.css';
+import XLSX from 'xlsx/dist/xlsx.full.min.js';
 
 const FileUpload = () => {
     // const posts = data.elementos;
@@ -14,7 +15,26 @@ const FileUpload = () => {
         setFiles(JSON.parse(e.target.result));
         };
     };
-  
+
+    const handleExportToExcel = () => {
+        const errorItems = files.elementos.flatMap((outerElement) =>
+          outerElement.errores.map((error) => ({
+            Servicio: outerElement.elemento,
+            Error: error.codigoError,
+            Ocurrencia: error.cantidadOcurrencia,
+            Detalle: error.detalleError,
+            Fecha: error.fechaUltimaOcurrencia,
+          }))
+        );
+      
+        const worksheet = XLSX.utils.json_to_sheet(errorItems);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Errores por Servicio');
+        XLSX.writeFile(workbook, 'resultados_mapeos.xlsx');
+    };
+
+
+
     return (
 
         <>
@@ -23,7 +43,7 @@ const FileUpload = () => {
             multiple="multiple" onChange={handleChange}
         />
         <br />
-        <h4>Exportar a Excel</h4>
+        <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
         <br />
         <div className="gridParserJson">
             {files && (files.elementos.map(outerElement => {
