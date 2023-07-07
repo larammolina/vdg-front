@@ -37,18 +37,11 @@ Dependencias utilizadas 🔧
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-Endpoints
+Funcionalidades 🔧
 
-        ${url}/servicios:
-            Trae una lista de los servicios disponibles en OM.
-            Ejemplo: [nombreServicio : descripcion, nombreServicio2 : descripcion2, …]
-        ${url}/servicios/pronosticables:
-            Trae una lista de los servicios disponibles para realizar pronósticos.
-        ${url}/circuitos:
-            Trae lista de los circuitos en OM.
-        ${url}/pronosticos/total/${nombreServicio}&days=xx:
-            Trae % de disponibilidad a xx periodo de tiempo del servicio indicado.
-        ${url}/pronosticos/errores/${nombreServicio}&days=xx:
-            Trae % de probabilidad de tipo-error a xx periodo de tiempo del servicio indicado.
+1- Buscar Errores, Avisos, Errores Funcionales de los servicios por fecha. Exportar el resultado a excel.
 
-
+2 - Subir tu propio archivo JSon y mapear los Errores, Avisos, Errores Funcionales de los servicios de todo el documento. Exportar el resultado a excel.
+      
+4 - Conocer la disponibilidad de un servicio determinado en forma de grafico. Casos de éxito versus fallas.
+       

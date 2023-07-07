@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 const Home = () => {
     return (
         <>
-           <Titulo titulo="Errores" />
+           <Titulo titulo="Búsqueda de Errores" />
            <SearchBar />
         </>
     )
