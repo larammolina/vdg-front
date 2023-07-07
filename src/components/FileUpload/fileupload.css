@@ -6,8 +6,8 @@
 .gridParserJson {
     display: grid;
     justify-items: center;
-    grid-template-columns: 250px 250px 250px 250px;
-    grid-template-rows: 150px 150px 150px 150px; 
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 150px 150px 150px; 
     column-gap: 50px;
     row-gap: 20px;
 }

@@ -7,11 +7,11 @@ import ErroresPorServicio from '../pages/ErroresPorServicio'
 
 const Layout = () => {
   return (
-    <div className='flex h-screen overflow-hidden'>
+    <div className='flex h-screen'>
 			<Sidebar/>
       <div className="flex flex-col p-7 grow justify-between ">
 				
-				<main className='grow'>
+				<main className="overflow-scroll grow">
 					<Outlet />
           
 				</main>

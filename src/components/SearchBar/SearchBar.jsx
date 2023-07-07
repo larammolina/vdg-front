@@ -40,6 +40,7 @@ const SearchBar = () => {
     });
 
     let searchResults = [];
+
     if (errorType === 'erroresFuncionales') {
       searchResults = filteredData.flatMap(item => item.erroresFuncionales || []);
     } else if (errorType === 'erroresFuncionalesAux') {
@@ -88,25 +89,27 @@ const SearchBar = () => {
     
   
     return (
-      <>
-        <div className="">
+      
+      <div className="overflow-scroll">
+        <div>
            
-          <input
+          {/* <input
             type="text"
             className="searchBar_"
             placeholder="Buscar por término"
             value={searchTerm}
             onChange={handleSearchTerm}
-          /> <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
+          />  */}
           <div className='filtros_'>
             <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
-            <input className="item_" name="fecha" type='date' min="2020-01-01" />
+            <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
+            {/* <input className="item_" name="fecha" type='date' min="2020-01-01" /> */}
             
           </div>
         </div>
-        <div>
+        <div className=''>
           {searchResults.length > 0 && (
             <ul>
               {searchResults.map((item, index) => (
@@ -135,7 +138,7 @@ const SearchBar = () => {
         </div>
 
 
-      </>
+      </div>
     );
   };
   
