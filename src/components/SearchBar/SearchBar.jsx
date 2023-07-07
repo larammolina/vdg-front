@@ -10,17 +10,17 @@ import './searchbar.css'
 import data from './../../data/Monitor/OM-2023-06-15T-235800.json';
 
 const SearchBar = () => {
-    const [value, setValue] = useState(''); 
-    const [service, setService] = useState('');
-    const [errorType, setErrorType] = useState('');
-    const [date, setDate] = useState('');
-    const [ocurrencia, setOcurrencia] = useState('');
-    const [descripcionError, setDescripcionError] = useState('');
-    const [detalleError, setDetalleError] = useState('');
+  const [value, setValue] = useState(''); 
+  const [service, setService] = useState('');
+  const [errorType, setErrorType] = useState('');
+  const [date, setDate] = useState('');
+  const [ocurrencia, setOcurrencia] = useState('');
+  const [descripcionError, setDescripcionError] = useState('');
+  const [detalleError, setDetalleError] = useState('');
 
     
-    ///
-    const [searchTerm, setSearchTerm] = useState('');
+    
+  const [searchTerm, setSearchTerm] = useState('');
   const [searchDescription, setSearchDescription] = useState('');
   const [searchFilter, setSearchFilter] = useState('all');
   const [searchResults, setSearchResults] = useState([]);
@@ -29,22 +29,14 @@ const SearchBar = () => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearchDescription = (e) => {
-    setSearchDescription(e.target.value);
-  };
-
-  const handleSearchFilter = (e) => {
-    setSearchFilter(e.target.value);
-  };
-
   const handleSearch = () => {
     const filteredData = data.elementos.filter(item => {
       if (item.descripcion && item.descripcion.toLowerCase().includes(searchTerm.toLowerCase())) {
-        if (searchDescription) {
+        if (service) {
           return (
-            (searchFilter === 'erroresFuncionales' && item.erroresFuncionales) ||
-            (searchFilter === 'erroresFuncionalesAux' && item.erroresFuncionalesAux) ||
-            (searchFilter === 'errores' && item.errores)
+            (errorType === 'erroresFuncionales' && item.erroresFuncionales) ||
+            (errorType === 'erroresFuncionalesAux' && item.erroresFuncionalesAux) ||
+            (errorType === 'errores' && item.errores)
           );
         } else {
           return true;
@@ -54,11 +46,11 @@ const SearchBar = () => {
     });
 
     let searchResults = [];
-    if (searchFilter === 'erroresFuncionales') {
+    if (errorType === 'erroresFuncionales') {
       searchResults = filteredData.flatMap(item => item.erroresFuncionales || []);
-    } else if (searchFilter === 'erroresFuncionalesAux') {
+    } else if (errorType === 'erroresFuncionalesAux') {
       searchResults = filteredData.flatMap(item => item.erroresFuncionalesAux || []);
-    } else if (searchFilter === 'errores') {
+    } else if (errorType === 'errores') {
       searchResults = filteredData.flatMap(item => {
         if (item.errores && Array.isArray(item.errores)) {
           return item.errores.map(error => ({
@@ -84,11 +76,9 @@ const SearchBar = () => {
           <input
             type="text"
             className="searchBar_"
-            placeholder="Buscar errores..."
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
+            placeholder="Buscar por término"
+            value={searchTerm}
+            onChange={handleSearchTerm}
           />
           <div className='filtros_'>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
@@ -103,61 +93,39 @@ const SearchBar = () => {
        
 
         <div>
-      <div>
-        <input
-          type="text"
-          placeholder="Buscar por término..."
-          value={searchTerm}
-          onChange={handleSearchTerm}
-        />
-      </div>
-      <div>
-        <select value={searchDescription} onChange={handleSearchDescription}>
-          <option value="">Todas las descripciones</option>
-          <option value="Contratacion cliente">Contratacion cliente</option>
-          <option value="Contracion producto">Contracion producto</option>
-          <option value="Evaluacion de riesgo">Evaluacion de riesgo</option>
-        </select>
-      </div>
-      <div>
-        <select value={searchFilter} onChange={handleSearchFilter}>
-          <option value="all">Todos los filtros</option>
-          <option value="erroresFuncionales">erroresFuncionales</option>
-          <option value="erroresFuncionalesAux">erroresFuncionalesAux</option>
-          <option value="errores">errores</option>
-        </select>
-      </div>
-      <div>
-        <button onClick={handleSearch}>Buscar</button>
-      </div>
-      {searchResults.length > 0 && (
-  <ul>
-    {searchResults.map((item, index) => (
-      <li key={index}>
-        {searchFilter === 'errores' ? (
-          <>
-            <p>Código de error: {item.codigoError}</p>
-            <p>Descripción de error: {item.descripcionError}</p>
-            <p>Detalle de error: {item.detalleError}</p>
-            <p>Cantidad de ocurrencias: {item.cantidadOcurrencia}</p>
-            <p>Fecha última ocurrencia: {item.fechaUltimaOcurrencia}</p>
-          </>
-        ) : (
-          <>
-            <h4>{item.date}</h4>
-            <p>Request: {item.request}</p>
-            <p>Response: {item.response ? item.response.join(', ') : ''}</p>
-          </>
-        )}
-      </li>
-    ))}
-  </ul>
-)}
-    </div>
+      
+      
+          <div>
+            <button onClick={handleSearch}>Buscar</button>
+          </div>
+          {searchResults.length > 0 && (
+            <ul>
+              {searchResults.map((item, index) => (
+                <li key={index}>
+                  {errorType === 'errores' ? (
+                    <>
+                      <p>Código de error: {item.codigoError}</p>
+                      <p>Descripción de error: {item.descripcionError}</p>
+                      <p>Detalle de error: {item.detalleError}</p>
+                      <p>Cantidad de ocurrencias: {item.cantidadOcurrencia}</p>
+                      <p>Fecha última ocurrencia: {item.fechaUltimaOcurrencia}</p>
+                    </>
+                  ) : (
+                    <>
+                      <h4>{item.date}</h4>
+                      <p>Request: {item.request}</p>
+                      <p>Response: {item.response ? item.response.join(', ') : ''}</p>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+              )}
+        </div>
 
 
       </>
     );
   };
   
-  export default SearchBar;
+export default SearchBar;
