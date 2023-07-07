@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
-import Filtros from '../Filtros/Filtros';
 import ServiceOptions from '../ServiceOptions/ServiceOptions';
 import ErrorOptions from '../ErrorOptions/ErrorOptions';
-import FileUpload from '../FileUpload/FileUpload';
-import Result from '../Result/Result';
-
 import './searchbar.css'
 
 import data from './../../data/Monitor/OM-2023-06-15T-235800.json';
@@ -83,21 +79,11 @@ const SearchBar = () => {
           <div className='filtros_'>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
+            <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
             <input className="item_" name="fecha" type='date' min="2020-01-01" />
           </div>
         </div>
         <div>
-          <Result tipoDeError={errorType} servicio={service} fecha={date} descripcionError={descripcionError} detalleError={detalleError} cantidadError={ocurrencia}/>
-        </div>
-        
-       
-
-        <div>
-      
-      
-          <div>
-            <button onClick={handleSearch}>Buscar</button>
-          </div>
           {searchResults.length > 0 && (
             <ul>
               {searchResults.map((item, index) => (

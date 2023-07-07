@@ -1,7 +1,7 @@
 import Titulo from '../components/Titulo/Titulo';
 import FileUpload from '../components/FileUpload/FileUpload';
 
-const Circuitos = () => {
+const MapearErrores = () => {
 	return (
 		<div>
 			<Titulo titulo="Errores desde Archivo"/>
@@ -10,4 +10,4 @@ const Circuitos = () => {
 	)
 }
 
-export default Circuitos;
+export default MapearErrores;

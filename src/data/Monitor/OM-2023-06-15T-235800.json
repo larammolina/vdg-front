@@ -182,7 +182,7 @@
       }
     }, {
       "elemento": "Servicio 4",
-      "descripcion": "Contratacion cliente",
+      "descripcion": "Contratacion Cliente",
       "cantidadEjecuciones": 1.0,
       "fechaUltimaEjecucion": "15/06/2023 23:18:42",
       "cantidadEjecucionesErroneas": 0.0,
