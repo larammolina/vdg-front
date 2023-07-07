@@ -1,4 +1,4 @@
-import { baseURL } from "../constantes/baseURL";
+import { baseURL } from "../constants/baseURL";
 import axios from 'axios';
 
 export const getServicios = async () => {
