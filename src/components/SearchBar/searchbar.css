@@ -1,0 +1,33 @@
+
+
+.filtros_{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: baseline;
+  margin: 5px;
+  
+}
+
+.searchBar_ {
+  border: grey solid 2px;
+  min-width: 600px;
+  max-width: 900px;
+  height: 45px;
+  margin-top: 50px;
+  padding: 15px;
+  border-radius:25px;
+}
+
+.item_ {
+  padding: 10px;
+  border-radius:25px;
+  border: grey solid 1px;
+  margin: 10px;
+}
+
+.botonBuscar_ {
+  background-color: lightseagreen;
+  border-radius:25px;
+  width: 100px;
+}

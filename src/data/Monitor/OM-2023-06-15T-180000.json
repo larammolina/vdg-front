@@ -1,0 +1,65 @@
+{
+    "monitorHabilitado": "true",
+    "fechaInicioAplicacion": "15/06/2023 17:13:19",
+    "fechaInicioServicios": "15/06/2023 17:13:19",
+    "elementos": [
+      {
+        "elemento": "SEGU",
+        "descripcion": "Seguros",
+        "cantidadEjecuciones": 1.0,
+        "fechaUltimaEjecucion": "15/06/2023 17:18:42",
+        "cantidadEjecucionesErroneas": 0.0,
+        "fechaUltimaEjecucionErronea": "",
+        "cantidadEjecucionesAvisos": 0.0,
+        "fechaUltimaEjecucionAviso": "",
+        "porcentajeExito": 100.0,
+        "porcentajeError": 0.0,
+        "porcentajeAviso": 0.0,
+        "tipo": "TRX",
+        "errores": [
+          {
+            "codigoError": "VE400",
+            "descripcionError": "Codigo Error: VE400.Detalle Error: La verificaciÃ³n no estÃ¡ abierta",
+            "detalleError": "La verificaciÃ³n no estÃ¡ abierta",
+            "cantidadOcurrencia": 89,
+            "fechaUltimaOcurrencia": "01/06/2023 15:16:53"
+          }
+        ],
+        "erroresFuncionalesAux": [
+          {
+            "date": "01/06/2023 07:30:55",
+            "response": [
+              "CLE0405 -  EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\u0000"
+            ],
+            "cantidadOcurrencia": 145,
+            "fechaUltimaOcurrencia": "01/06/2023 17:46:44"
+          }
+        ],
+        "erroresFuncionales": [
+          {
+            "date": "01/06/2023 07:30:55",
+            "request": "",
+            "response": [
+              "CLE -  EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\u0000"
+            ]
+          },
+          {
+            "date": "01/06/2023 07:30:55",
+            "request": "\"{PC12In={numeroCelular=null , mail=Luzzapata603@gmail.con                                                          , opcion=02, nombre=Lucrecia guadalupe  , condicion= , nacionalidad=080, fechaDeNacimiento=25091989, tipoDocumento=00, caracterDeCelular=    , prefijoCelular=    , apellido=Zapata                                                 , numeroDocumento=0000034827603, cuil=0023348276034, sexo=F}, METADATA-STATUS=REFERENCIA=[11058474003230601] STATUS=[ERROR], ERROR=[CLE0405- EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\\u0000-null]}\"",
+            "response": [
+              "CLE -  EXTENSION INVALIDA PARA DIRECCION ELECTRONICA\u0000"
+            ]
+          }
+        ],
+        "campaigns": [],
+        "ejecucionesExitosas": {
+          "fechaUltimaEjecucionExitosa": "15/06/2023 17:18:42",
+          "cantidadEjecucionesExitosas": 1.0,
+          "cantidadAprobados": 0.0,
+          "cantidadRechazados": 0.0,
+          "porcentajeAprobado": 0.0,
+          "porcentajeRechazado": 0.0
+        }
+      }
+    ]
+  }
