@@ -1,10 +1,5 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-];
-
 const COLORS = ["#00C49F", "#8884d8"];
 
 const RADIAN = Math.PI / 180;
@@ -21,12 +16,12 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
 
-const GraficoTorta = () => {
+const GraficoTorta = ({porcentajes}) => {
 	return (
 		<ResponsiveContainer width="100%" height={400}>
 		<PieChart width={400} height={400}>
 			<Pie
-				data={data}
+				data={porcentajes}
 				cx="50%"
 				cy="50%"
 				labelLine={false}
@@ -35,7 +30,7 @@ const GraficoTorta = () => {
 				fill="#8884d8"
 				dataKey="value"
 			>
-				{data.map((entry, index) => (
+				{porcentajes.map((entry, index) => (
 					<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
 				))}
 			</Pie>

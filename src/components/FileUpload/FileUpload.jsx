@@ -38,12 +38,18 @@ const FileUpload = () => {
     return (
 
         <>
+        
+        
         <input  type="file" id="docpicker" className="examinar_"
-            accept=".doc,.docx,.xml,.json,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" 
-            multiple="multiple" onChange={handleChange}
+                accept=".doc,.docx,.xml,.json,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" 
+                multiple="multiple" onChange={handleChange}
+                placeholder="lalala"
         />
+ 
         <br />
         <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
+        <br />
+        <br />
         <br />
         <div className="gridParserJson">
             {files && (files.elementos.map(outerElement => {

@@ -10,7 +10,7 @@ export const Sidebar = () => {
 	const [open, setOpen ] =  useState(true);
 	const [submenuOpen, setSubmenuOpen ] =  useState(false);
 	const Menus = [
-		{index:1, path: '', title: "Buscar Errores", icon : <AiOutlineBarChart/>},
+		{index:1, path: '', title: "Buscador", icon : <AiOutlineBarChart/>},
 		{index:2, path: 'pronostico', title: "Pronóstico", icon: <AiOutlineFundProjectionScreen/> },
 		{index:3,
 			path: 'servicios',
@@ -23,11 +23,11 @@ export const Sidebar = () => {
 				{index: "c", path: 'evaluacion', title:"Evaluación Crediticia"},
 			]
 		},
-		{index:4, path: 'MapearErrores', title: "Mapear Errores desde Archivo", icon: <BsReverseLayoutSidebarReverse/>}
+		{index:4, path: 'MapearErrores', title: "Análisis", icon: <BsReverseLayoutSidebarReverse/>}
 	]
 	
 	return (
-		<div className={`bg-dark-purple p-5 pt-8 ${ open ? "w-72" : "w-20"} relative duration-300`}>
+		<div className={`bg-dark-purple p-5 pt-8 ${ open ? "w-72" : "w-20"} relative duration-300 h-full`}>
 			<BsArrowLeftShort className={`bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border-2 border-dark-purple ${!open && "rotate-180"}`} onClick={() => setOpen(!open) }/>
 
 			<div className="inline-flex">

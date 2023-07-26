@@ -13,26 +13,26 @@ import ErroresPorServicio from "./pages/ErroresPorServicio";
 function App() {
   
   return (
-      <BrowserRouter>
+    <BrowserRouter>
         <Routes>
 
-					{/* ruta layout con header y footer */}
-					<Route element={<Layout />}> 
+			{/* ruta layout con header y footer */}
+			<Route element={<Layout />}> 
 
-						<Route exact path="/" element={<Home />}/>
+			<Route exact path="/" element={<Home />}/>s
 
-						<Route exact path="/pronostico" element={<Modelo />} />
+			<Route exact path="/pronostico" element={<Modelo />} />
 							
-						<Route exact path="/servicios" element={<Servicios />} />
+			<Route exact path="/servicios" element={<Servicios />} />
 
-						<Route exact path="/servicios/:servicioId" element={<Servicio />} />
+			<Route exact path="/servicios/:servicioId" element={<Servicio />} />
 
-						<Route exact path="/mapearErrores" element={<MapearErrores />} />
+			<Route exact path="/mapearErrores" element={<MapearErrores />} />
 
-					</Route>
+			</Route>
 
         </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   )
 }
 

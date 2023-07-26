@@ -4,7 +4,7 @@ import FileUpload from '../components/FileUpload/FileUpload';
 const MapearErrores = () => {
 	return (
 		<div>
-			<Titulo titulo="Errores desde Archivo"/>
+			<Titulo titulo="Análisis de Errores"/>
 			<FileUpload />
 		</div>
 	)

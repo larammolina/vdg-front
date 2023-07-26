@@ -40,6 +40,7 @@ const SearchBar = () => {
     });
 
     let searchResults = [];
+
     if (errorType === 'erroresFuncionales') {
       searchResults = filteredData.flatMap(item => item.erroresFuncionales || []);
     } else if (errorType === 'erroresFuncionalesAux') {
@@ -88,54 +89,58 @@ const SearchBar = () => {
     
   
     return (
-      <>
-        <div className="">
+      
+      <div>
+        <br />
+        
+        <div>
            
-          <input
+          {/* <input
             type="text"
             className="searchBar_"
             placeholder="Buscar por término"
             value={searchTerm}
             onChange={handleSearchTerm}
-          /> <button className='botonBuscar_' onClick={handleSearch}>Buscar</button>
+          />  */}
           <div className='filtros_'>
             <button className='botonExportar_' onClick={handleExportToExcel}>Exportar a Excel</button>
             <ServiceOptions className="item_" handleService={service => setService(service)}/>
             <ErrorOptions  className="item_" handleFilter={errorType => setErrorType(errorType)}/>
-            <input className="item_" name="fecha" type='date' min="2020-01-01" />
+            <button className='botonBuscar_ bg-dark-purple'  onClick={handleSearch}>Buscar</button>
+            {/* <input className="item_" name="fecha" type='date' min="2020-01-01" /> */}
             
           </div>
         </div>
-        <div>
+        <div className=''>
           {searchResults.length > 0 && (
             <ul>
               {searchResults.map((item, index) => (
-                <li key={index}>
-                  {errorType === 'errores' ? (
-                    <>
-                      <p>------------------</p>
-                      <p>Código de error: {item.codigoError}</p>
-                      <p>Descripción de error: {item.descripcionError}</p>
-                      <p>{item.detalleError}</p>
-                      <p>Ocurrencias: {item.cantidadOcurrencia}</p>
-                      <p>Fecha última ocurrencia: {item.fechaUltimaOcurrencia}</p>
-                    </>
-                  ) : (
-                    <>
-                      <p>------------------</p>
-                      <h4>{item.date}</h4>
-                      <p>{item.request}</p>
-                      <p>{item.response ? item.response.join(', ') : ''}</p>
-                    </>
-                  )}
-                </li>
+								<div className='p-10 rounded-lg shadow-lg w-2/5 mb-2'>
+									<li key={index}>
+										{errorType === 'errores' ? (
+											<>
+												<p><span className='font-bold'>Código de error:</span> {item.codigoError}</p>
+												<p><span className='font-bold'>Descripción de error:</span> {item.descripcionError}</p>
+												<p>{item.detalleError}</p>
+												<p><span className='font-bold'>Ocurrencias:</span> {item.cantidadOcurrencia}</p>
+												<p><span className='font-bold'>Fecha última ocurrencia:</span> {item.fechaUltimaOcurrencia}</p>
+											</>
+										) : (
+											<>
+												<h4>{item.date}</h4>
+												<p>{item.request}</p>
+												<p>{item.response ? item.response.join(', ') : ''}</p>
+											</>
+										)}
+									</li>
+								</div>
               ))}
             </ul>
               )}
         </div>
 
 
-      </>
+      </div>
     );
   };
   
