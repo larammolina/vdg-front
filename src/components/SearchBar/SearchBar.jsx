@@ -115,25 +115,25 @@ const SearchBar = () => {
           {searchResults.length > 0 && (
             <ul>
               {searchResults.map((item, index) => (
-                <li key={index}>
-                  {errorType === 'errores' ? (
-                    <>
-                      <p>------------------</p>
-                      <p>Código de error: {item.codigoError}</p>
-                      <p>Descripción de error: {item.descripcionError}</p>
-                      <p>{item.detalleError}</p>
-                      <p>Ocurrencias: {item.cantidadOcurrencia}</p>
-                      <p>Fecha última ocurrencia: {item.fechaUltimaOcurrencia}</p>
-                    </>
-                  ) : (
-                    <>
-                      <p>------------------</p>
-                      <h4>{item.date}</h4>
-                      <p>{item.request}</p>
-                      <p>{item.response ? item.response.join(', ') : ''}</p>
-                    </>
-                  )}
-                </li>
+								<div className='p-10 rounded-lg shadow-lg w-2/5 mb-2'>
+									<li key={index}>
+										{errorType === 'errores' ? (
+											<>
+												<p><span className='font-bold'>Código de error:</span> {item.codigoError}</p>
+												<p><span className='font-bold'>Descripción de error:</span> {item.descripcionError}</p>
+												<p>{item.detalleError}</p>
+												<p><span className='font-bold'>Ocurrencias:</span> {item.cantidadOcurrencia}</p>
+												<p><span className='font-bold'>Fecha última ocurrencia:</span> {item.fechaUltimaOcurrencia}</p>
+											</>
+										) : (
+											<>
+												<h4>{item.date}</h4>
+												<p>{item.request}</p>
+												<p>{item.response ? item.response.join(', ') : ''}</p>
+											</>
+										)}
+									</li>
+								</div>
               ))}
             </ul>
               )}
