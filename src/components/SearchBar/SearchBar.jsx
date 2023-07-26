@@ -90,7 +90,7 @@ const SearchBar = () => {
   
     return (
       
-      <div className="overflow-scroll">
+      <div>
         <br />
         
         <div>

@@ -11,7 +11,7 @@ const Layout = () => {
 			<Sidebar/>
       <div className="flex flex-col p-7 grow justify-between ">
 				
-				<main className="overflow-scroll grow">
+				<main className="overflow-y-scroll no-scrollbar">
 					<Outlet />
           
 				</main>
